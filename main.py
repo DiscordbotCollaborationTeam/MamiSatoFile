@@ -29,5 +29,7 @@ async def on_message_edit(old, new):
         df = json.load(f)
     df.setdefault(user, 0)
     df[user] += AofM
+    f = open(r"currency.json", 'w')
+    json.dump(df, f, indent=4)
 
 bot.run(Token)
